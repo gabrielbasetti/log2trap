@@ -46,16 +46,16 @@
 
 ## :dart: About ##
 
-log2trap is a script that sends logs received from network equipment (routers, switches, etc) to zabbix, using rsyslog and zabbix trapper.
-This allows you to generate alerts in zabbix from log messages (login correct/incorrect, hardware error and whatever you can think of).
+log2trap is a script that sends logs received from network equipment (routers, switches, etc) to zabbix, using rsyslog and zabbix trapper.\n
+This allows you to generate alerts in zabbix from log messages (login correct/incorrect, hardware error and whatever you can think of).\n
 
 The original project from which I took the initiative corresponds to:
 https://github.com/v-zhuravlev/zabbix-syslog
-Whom I thank for all the previous work he has done.
+To whom I thank all the previous work that has been done.\n
 I also thank adubkov for the development of the library for zabbix_sender (*)
 https://github.com/adubkov/py-zabbix
 
-## :sparkles: Funcionamiento básico ##
+## :sparkles: Basic behavior ##
 
 1. Device generates a log and sends it to a remote rsyslog server.
 2. Rsyslog receives it and runs a script (log2trap).
