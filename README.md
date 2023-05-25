@@ -99,25 +99,25 @@ $ nano log2trap.conf
 $ nano /etc/rsyslog.d/zabbix_rsyslog.conf
 
 # Copy-paste this settings into zabbix_rsyslog.conf. ***Check the path of the binary***
-$ $ModLoad imudp
-$ $UDPServerRun 514
-$ 
-$ #enables omrpog module
-$ $ModLoad omprog
-$ 
-$ $template RFC3164fmt,"<%PRI%>%TIMESTAMP% %HOSTNAME% %syslogtag%%msg%"
-$ $template network-fmt,"%TIMESTAMP:::date-rfc3339% [%fromhost-ip%] %pri-text% %syslogtag%%msg%\n"
-$ 
-$ #exclude unwanted messages(examples):
-$ :msg, contains, "Child connection from" stop
-$ :msg, contains, "exit after auth (ubnt): Disconnect received" stop
-$ :msg, contains, "password auth succeeded for 'ubnt' from" stop
-$ :msg, contains, "exit before auth: Exited normally" stop
-$ if $fromhost-ip != '127.0.0.1' then {
-$         action(type="omprog" binary="/home/your-username/log2trap/log2trap.py" template="network-fmt")
-$         stop
-$ }
-$ 
+$ModLoad imudp
+$UDPServerRun 514
+
+#enables omrpog module
+$ModLoad omprog
+
+$template RFC3164fmt,"<%PRI%>%TIMESTAMP% %HOSTNAME% %syslogtag%%msg%"
+$template network-fmt,"%TIMESTAMP:::date-rfc3339% [%fromhost-ip%] %pri-text% %syslogtag%%msg%\n"
+
+#exclude unwanted messages(examples):
+:msg, contains, "Child connection from" stop
+:msg, contains, "exit after auth (ubnt): Disconnect received" stop
+:msg, contains, "password auth succeeded for 'ubnt' from" stop
+:msg, contains, "exit before auth: Exited normally" stop
+if $fromhost-ip != '127.0.0.1' then {
+        action(type="omprog" binary="/home/your-username/log2trap/log2trap.py" template="network-fmt")
+        stop
+}
+
 
 # Restart services
 $ systemctl restart rsyslog zabbix-server
