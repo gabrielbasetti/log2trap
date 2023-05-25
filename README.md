@@ -123,6 +123,9 @@ if $fromhost-ip != '127.0.0.1' then {
 $ systemctl restart rsyslog zabbix-server
 
 ```
+Check your firewall to open UDP 514 (default) to receive remote logs.
+
+In zabbix, import syslog template "template-syslog.xml" and attach it to hosts from which you expect syslog messages to come
 
 ## :memo: License ##
 
