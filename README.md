@@ -46,7 +46,7 @@
 
 ## :dart: About ##
 
-log2trap is a script that sends logs received from network equipment (routers, switches, etc) to zabbix, using rsyslog and zabbix trapper.\n
+log2trap is a script that sends logs received from network equipment (routers, switches, etc) to zabbix, using rsyslog and zabbix trapper.<br>
 This allows you to generate alerts in zabbix from log messages (login correct/incorrect, hardware error and whatever you can think of).\n
 
 The original project from which I took the initiative corresponds to:
