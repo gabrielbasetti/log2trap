@@ -47,12 +47,12 @@
 ## :dart: About ##
 
 log2trap is a script that sends logs received from network equipment (routers, switches, etc) to zabbix, using rsyslog and zabbix trapper.<br>
-This allows you to generate alerts in zabbix from log messages (login correct/incorrect, hardware error and whatever you can think of).\n
+This allows you to generate alerts in zabbix from log messages (login correct/incorrect, hardware error and whatever you can think of).<br>
 
-The original project from which I took the initiative corresponds to:
-https://github.com/v-zhuravlev/zabbix-syslog
-To whom I thank all the previous work that has been done.\n
-I also thank adubkov for the development of the library for zabbix_sender (*)
+The original project from which I took the initiative corresponds to:<br>
+https://github.com/v-zhuravlev/zabbix-syslog<br>
+To whom I thank all the previous work that has been done.<br>
+I also thank adubkov for the development of the library for zabbix_sender (*)<br>
 https://github.com/adubkov/py-zabbix
 
 ## :sparkles: Basic behavior ##
@@ -74,8 +74,8 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements ##
 
-Before starting, you need to have Zabbix Server 6.4 previously installed and running and Python3 compiler installed.
-pyzabbix and py-zabbix repos are not the same. Python pip install the two repos in the same folder "pyzabbix", what causes problems.
+Before starting, you need to have Zabbix Server 6.4 previously installed and running and Python3 compiler installed.<br>
+pyzabbix and py-zabbix repos are not the same. Python pip install the two repos in the same folder "pyzabbix", what causes problems.<br>
 Don't install py-zabbix as for some reason it doesn't work with Zabbix Server 6.4
 
 ## :checkered_flag: Starting ##
