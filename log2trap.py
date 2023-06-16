@@ -96,8 +96,8 @@ while (True):
                 #consulto a la api y guardo el cache
                 host = consultar_host_desde_api(ip, config['user'], config['pass'], config['url'])
                 if (host):
-                    #siempre guardo lo que traigo de la api para actualizar el cache    
+                    #siempre guardo lo que traigo de la api para actualizar el cache
                     guardar_host_en_cache(ip, host)
                     trap_send(host, message, config['server'])
-            else: 
+            else:
                 trap_send(host, message, config['server'])
